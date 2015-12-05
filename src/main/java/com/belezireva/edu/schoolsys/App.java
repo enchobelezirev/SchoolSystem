@@ -1,82 +1,27 @@
 package com.belezireva.edu.schoolsys;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
-import com.belezireva.edu.schoolsys.dao.Dao;
-import com.belezireva.edu.schoolsys.dao.HomeworkDAO;
-import com.belezireva.edu.schoolsys.dao.StudentDAO;
-import com.belezireva.edu.schoolsys.dao.SubjectDAO;
-import com.belezireva.edu.schoolsys.dao.TopicDAO;
-import com.belezireva.edu.schoolsys.model.Homework;
-import com.belezireva.edu.schoolsys.model.Student;
-import com.belezireva.edu.schoolsys.model.Subject;
-import com.belezireva.edu.schoolsys.model.Teacher;
-import com.belezireva.edu.schoolsys.model.Topic;
+import java.io.IOException;
 
 public class App {
-    public static void main(String[] args) throws MalformedURLException {
-        List<Topic> topics = new ArrayList<>();
-        // Subject s = new Subject();
-        // s.setDescription("");
-        // s.setDifficulty(1);
-        // s.setName("Javaaaa");
-        // s.setSubjectLang("Java");
-        // Teacher teacher = new Teacher();
-        // teacher.setName("tonza");
-        // teacher.setPicture(new byte[]{});
-        // teacher.setTeacherDescr("test");
-        // s.setTeacher(teacher);
-        // Dao<Subject> sDao = new SubjectDAO();
-        // Subject s = sDao.get("1");
-        // System.out.println(s.getTopics().toString());
-        // Topic t = new Topic();
-        // t.setName("test1");
-        // t.setDescription("");
-        // t.setAssingment(new URL("http://test.com"));
-        // t.setDifficulty(1);
-        // t.setNotes("");
-        // t.setSampleApps("sample1");
-        // t.setSubject(s);
-        // topics = s.getTopics();
-        // topics.add(t);
-        // s.setTopics(topics);
-//        TopicDAO tDao = new TopicDAO();
-//        Topic t = tDao.get("1");
-//        //
-//        Student stud = new Student();
-//        stud.setName("encho1");
-//        stud.setPassword("1234");
-//        stud.setPic(new byte[] {});
-//        stud.setUserName("enjoycho1");
-//
-//        Homework hw = new Homework();
-//        hw.setHwUrl("test1");
-//        List<Homework> hws = new ArrayList<>();
-//
-//        hw.setStudent(stud);
-//        hw.setTopic(t);
-//
-//        hws.add(hw);
-//        stud.setHw(hws);
-//        t.setHomeWork(hws);
-//
-//        Dao<Homework> hwDao = new HomeworkDAO();
-//        hwDao.add(hw);
-        Dao<Subject> subjectDao = new SubjectDAO();
-        Subject s = subjectDao.get("1");
-        Topic t = new Topic();
-        t.setAssingment(new URL("http://test"));
-        t.setDescription("nqma");
-        t.setDifficulty(2);
-        t.setName("undef");
-        t.setNotes("");
-        t.setSampleApps("");
-        t.setSubject(s);
-        s.addTopic(t);
-        Dao<Topic> tDao = new TopicDAO();
-        tDao.add(t);
+    public static void main(String[] args) throws IOException {
+//        TeacherDAO teacherDao = new TeacherDAO();
+//        Teacher t = new Teacher(0, "Test", "Test descr1", new byte[] { 12, 32, 56 });
+////        teacherDao.add(new Teacher(0, "Test", "Test descr", new byte[] { 12, 32, 56 }));
+////        System.out.println(teacherDao.getAll());
+//        String encodedMsgs = "eyJqdGkiOiI2Nzg3MDBhYS03N2U1LTQxYzMtOWRlYS03ZTJjYzg2NjY5MjciLCJzdWIiOiIxNTUxODQiLCJzY29wZSI6WyJjbG91ZF9jb250cm9sbGVyLnJlYWQiLCJjbG91ZF9jb250cm9sbGVyLndyaXRlIiwiY2xvdWRfY29udHJvbGxlci5hZG1pbiIsInVhYS51c2VyIl0sImNsaWVudF9pZCI6ImNmIiwiY2lkIjoiY2YiLCJhenAiOiJjZiIsImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInVzZXJfaWQiOiIxNTUxODQiLCJ1c2VyX25hbWUiOiJYU01BU1RFUiIsImVtYWlsIjoiWFNNQVNURVJAdW5rbm93biIsImZhbWlseV9uYW1lIjoiWFNNQVNURVIiLCJpYXQiOjE0NDc3NDI2OTcsImV4cCI6MTQ0Nzc4NTg5NywiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgwL3VhYS9vYXV0aC90b2tlbiIsInppZCI6InVhYSIsImF1ZCI6WyJjbG91ZF9jb250cm9sbGVyIiwiY2YiLCJ1YWEiXX0";
+//        byte[] decoded = Base64.getDecoder().decode(encodedMsgs);
+//        System.out.println(new String(decoded, 0, decoded.length,"UTF-8"));
+//        Map<String, Object> tokenMap = new HashMap<>();
+//        tokenMap.put("scope", Arrays.asList("test-scope-1"));
+//        tokenMap.put("userName", "test-user-name");
+//        tokenMap.put("exp", Long.MAX_VALUE);
+//        String testToken = "{\"scope\":\""+Arrays.asList("test-scope-1")+"\"}";
+//        
+//        
+//        System.out.println(new String(Base64.getEncoder().encodeToString(testToken.getBytes())));
+//        String encoded = "eyJzY29wZSI6Ilt0ZXN0LXNjb3BlLTFdIn0=";
+//        byte[] decodedMap = Base64.getDecoder().decode(encoded);
+//        System.out.println(new String(decodedMap, 0, decodedMap.length, "UTF-8"));
+        
     }
 }

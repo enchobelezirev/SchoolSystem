@@ -1,54 +1,18 @@
 package com.belezireva.edu.schoolsys.model;
 
-import java.io.Serializable;
 import java.net.URL;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "TOPIC")
-public class Topic implements Serializable {
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue
+public class Topic  {
     private long id;
-
-    @Column(name = "NAME")
     private String name;
-
-    @Column(name = "ASSIGNMENT")
     private URL assingment;
-
-    @Column(name = "DIFFICULTY")
     private int difficulty;
-
-    @Column(name = "DESCR")
     private String description;
-
-    @Column(name = "NOTES")
     private String notes;
-
-    @Column(name = "SAMPLEAPPS")
-    private String sampleApps;
-
-    @OneToMany(targetEntity = Homework.class, mappedBy = "topic", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private List<Homework> homeWork;
-
-    
-    @ManyToOne(fetch = FetchType.EAGER, cascade= CascadeType.ALL)
-    @JoinColumn(name = "SUBJECT_ID")
     private Subject subject;
+    private String sampleApps;
+    private List<Homework> homeWork;
 
     public Topic(long id, String name, URL assingment, int difficulty, String description, String notes, String sampleApps, List<Homework> homework, Subject subject) {
         super();
@@ -61,9 +25,6 @@ public class Topic implements Serializable {
         this.sampleApps = sampleApps;
         this.homeWork = homework;
         this.subject = subject;
-    }
-
-    public Topic() {
     }
 
     public long getId() {

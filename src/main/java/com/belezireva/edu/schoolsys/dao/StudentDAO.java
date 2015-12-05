@@ -1,37 +1,49 @@
 package com.belezireva.edu.schoolsys.dao;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
-import com.belezireva.edu.schoolsys.model.Student;
+import com.belezireva.edu.schoolsys.model.Homework;
+import com.belezireva.edu.schoolsys.persistence.Repository;
 
-public class StudentDAO extends Dao<Student> {
+public class StudentDAO implements Repository<Homework> {
 
     @Override
-    public Student get(String... params) {
-        Student studentFound = null;
-        try (DbConnection conn = new DbConnection(persistenceUnit)) {
-            studentFound = conn.getEntityMan().createQuery("Select s FROM Student s Where s.userName=:name and s.password=:pass",
-                Student.class).setParameter("name", params[0]).setParameter("pass", params[1]).getSingleResult();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return studentFound;
+    public void add(Homework item) {
+        // TODO Auto-generated method stub
+        
     }
 
     @Override
-    public List<Student> getAll() {
-        try (DbConnection conn = new DbConnection(persistenceUnit)) {
-            return conn.getEntityMan().createQuery("Select s FROM Student s", Student.class).getResultList();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+    public Homework getRecordById(long id) {
+        // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public void update(Student item) {
-        Student studentToUpdate = get(item.getUserName(), item.getPassword());
-        updateItem(studentToUpdate);
+    public void updateRecordById(long id, Homework item) {
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public int deleteById(long id) {
+        return 0;
+        // TODO Auto-generated method stub
+        
+    }
+
+    @Override
+    public List<Homework> getAll() {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Connection getConnection() throws SQLException {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 }
